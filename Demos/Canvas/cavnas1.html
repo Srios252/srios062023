@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Drawing</title>
+<style>
+
+    *, *::before, *::after{
+margin:0;
+padding:0;
+box-sizing: border-box;
+    }
+
+    #canvas1{
+        background-color: silver;
+        width:80%;
+        height:80%;
+        position:absolute;
+        left:10%;
+        top:10%;
+        border:1px solid black;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Canvas - Drawing</h1>
+
+    <canvas id="canvas1"></canvas>
+
+    <script>
+//Create variable to get the canvas
+// Add methods for the canvas - context 2d
+
+const canvas = window.document.querySelector("#canvas1");
+//window.alert(canvas);
+const ctx = canvas.getContext("2d"); //Able to draw 2d objects
+
+// Make cavnas take up browser window 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Draw Rectangles
+ctx.fillStyle = "black";
+ctx.fillRect(10,10, 100,100); //Four arguments - 2 location and 2 dimensions w/h
+
+ctx.fillStyle = "orange";
+ctx.fillRect(50,50, 150,150);
+
+ctx.fillStyle = "white";
+ctx.fillRect(100,10, 150,100);
+
+ctx.fillStyle = "gray";
+ctx.fillRect(130,100, 250,100);
+
+//Draw Lines
+ctx.strokeStyle = "orange";
+ctx.lineWidth = 10;
+ctx.lineCap = 'round';
+
+ctx.beginPath(); //Pick up pen
+ctx.moveTo(50,350); //Move pen to starting point
+ctx.lineTo(500,450);
+ctx.stroke(); //Draw
+
+//Line 2
+ctx.strokeStyle = "black";
+ctx.beginPath(); //Pick up pen
+ctx.moveTo(550,10); //Move pen to starting point
+ctx.lineTo(550,400);
+ctx.lineTo(1000,400);
+ctx.closePath(); //Close the path/shape
+ctx.stroke();
+
+ctx.strokeStyle = "white";
+ctx.beginPath(); //Pick up pen
+ctx.moveTo(100,350); //Move pen to starting point
+ctx.lineTo(520,550);
+ctx.stroke(); //Draw
+
+ctx.strokeStyle = "gray";
+ctx.beginPath(); //Pick up pen
+ctx.moveTo(260,350); //Move pen to starting point
+ctx.lineTo(500,590);
+ctx.stroke(); //Draw
+
+
+    </script>
+    
+
+</body>
+</html>

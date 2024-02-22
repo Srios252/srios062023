@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Canvas Drawing 2</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ margin-top: 50px;
+ }
+ h1 {
+ text-align: center;
+ }
+ #canvas {
+ margin: auto;
+ display: block;
+ border: 1px solid silver;
+ }
+ </style>
+ </head>
+ <body>
+ <h1>Canvas Drawing 2</h1>
+ <canvas id="canvas" width="1000px" height="500px"></canvas>
+
+ <script>
+ // Create variables
+ const canvas = window.document.querySelector('#canvas');
+ const ctx = canvas.getContext('2d');
+
+ // Canvas Background color
+ canvas.style.backgroundColor = "#457EAE"
+
+ //draw circle for head
+ ctx.beginPath();
+ctx.fillStyle = '#FFF0DB';
+ctx.lineWidth = 5;
+ctx.arc(200, 150, 100, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+
+//Body circles
+ctx.beginPath();
+ctx.fillStyle = '#FFF0DB';
+ctx.lineWidth = 5;
+ctx.arc(200, 350, 130, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+// Buttons
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.arc(200, 350, 20, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.arc(200, 270, 20, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+// Hat
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.fillRect(90, 65, 220, 65);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.fillRect(150, 0, 100, 100);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = 'yellow';
+ctx.fillRect(150, 45, 100, 20);
+ctx.closePath();
+
+//Face
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.arc(160, 160, 17, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.arc(240, 160, 17, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(130, 190)
+ctx.lineTo(200, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(270, 190)
+ctx.lineTo(200, 200)
+ctx.stroke();
+ctx.closePath();
+
+// Draw Arms
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(80, 300)
+ctx.lineTo(30, 190)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(320, 300)
+ctx.lineTo(380, 190)
+ctx.stroke();
+ctx.closePath();
+
+//Fingers
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(50, 120)
+ctx.lineTo(30, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(20, 120)
+ctx.lineTo(30, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(-50, 120)
+ctx.lineTo(30, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(350, 120)
+ctx.lineTo(380, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(420, 120)
+ctx.lineTo(370, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#000';
+ctx.lineWidth = 5;
+ctx.moveTo(450, 150)
+ctx.lineTo(370, 200)
+ctx.stroke();
+ctx.closePath();
+
+// Snowflakes
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(700, 200)
+ctx.lineTo(800, 100)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(700, 100)
+ctx.lineTo(800, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(750, 100)
+ctx.lineTo(750, 200)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(800, 150)
+ctx.lineTo(700, 150)
+ctx.stroke();
+ctx.closePath();
+
+//Snowflake 2
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(500, 400)
+ctx.lineTo(600, 300)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(500, 300)
+ctx.lineTo(600, 400)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(550, 300)
+ctx.lineTo(550, 400)
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.strokeStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.moveTo(500, 350)
+ctx.lineTo(600, 350)
+ctx.stroke();
+ctx.closePath();
+
+//Scarf
+ctx.beginPath();
+ctx.fillStyle = '#FF0000';
+ctx.fillRect(100, 220, 200, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FF0000';
+ctx.fillRect(250, 250, 150, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(120, 220, 20, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(180, 220, 20, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(240, 220, 20, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(270, 250, 20, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(320, 250, 20, 40);
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.fillRect(370, 250, 20, 40);
+ctx.closePath();
+
+//Hills
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.arc(920, 400, 190, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.arc(700, 500, 170, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle = '#FFF';
+ctx.lineWidth = 5;
+ctx.arc(550, 550, 170, 0, Math.PI * 2);
+ctx.fill();
+ctx.closePath();
+
+
+ </script>
+ </body>
+</html>

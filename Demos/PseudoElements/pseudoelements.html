@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements</title>
+    <style>
+        p{
+            line-height:1.7;
+            color:#333;
+        }
+        p::first-letter{
+            font-size:32px;
+        }
+        p::selection{
+            background-color: rgb(222, 185, 222);
+        }
+        blockquote::before{
+            content: " “ ";
+            font-size:32px;
+        }
+        blockquote::after{
+            content: " ” ";
+            
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudo Elements</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ut ipsum autem laboriosam. Eos quaerat exercitationem voluptas amet iste quisquam sint dolore autem repellat repellendus laborum natus, nemo, sapiente possimus ratione aliquam voluptatum quidem minima soluta placeat nisi hic mollitia quia. Soluta, laudantium tenetur? Eum voluptatibus libero optio odio accusantium?</p>
+
+    <blockquote>To be or not to be. - Chagoyan</blockquote>
+</body>
+</html>

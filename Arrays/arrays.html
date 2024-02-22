@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+<h2>Index, Push, Pop, and Shift</h2>
+<h2>ForEach, Console.log</h2>
+    <script>
+        //Arrays 
+
+        //Create Array Variable
+        let marineLife = [];
+
+        //Add Values to array using an index
+        marineLife[0] = "Blue Whale";
+        marineLife[1] = "Octopus";
+        marineLife[2] = "Jellyfish";
+        marineLife[3] = "Anglerfish";
+
+        //Add Values to array using the push method
+        marineLife.push("Orca");
+        marineLife.push("Great White Shark");
+        marineLife.push("Starfish");
+        
+        //window.document.write(marineLife);
+
+        //Delete last value of an array usnig the pop method
+        marineLife.pop();
+
+        // Delete the first value of an array using the shift method
+        marineLife.shift();
+
+        //6 other items after pop and shift
+        marineLife.push("Clownfish");
+        marineLife.push("Blue Tang");
+        marineLife.push("Sea Anemone");
+        marineLife.push("Whale Shark");
+        marineLife.push("Squid");
+        marineLife.push("Crab");
+
+        //window.alert(myList);
+
+        console.log(marineLife);
+
+        //List array length (total values in array)
+        console.log(marineLife.length);
+
+        //Cycle through the array using forEach method
+        marineLife.forEach(  function(fishname, index){
+            console.log(index + ' ' + fishname);
+        } );
+
+        //Cycle throuhg array using forEach method
+        marineLife.forEach(function(dn, index){
+
+            window.alert(dn + ' is index' + index)
+        });
+
+    </script>
+</body>
+</html>

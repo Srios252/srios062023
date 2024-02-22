@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silvia Rios - Portfolio</title>
+
+<style>
+/* Set page colors with variables */
+:root{
+--color-primary:#00688b;
+--color-secondary:#00bfff;
+}
+/* 
+.header{
+    background-color: var(--color-secondary);
+} */
+
+/* Reset browser */
+
+*, *::before, 
+*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+/* Fix Browser Bounce */
+body{
+    overflow-x:auto;
+    width:100%;
+    overscroll-behavior: none;
+}
+
+/* General Css for mobile first */
+
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+    background-color: rgb(255, 255, 255);
+    color:var(--color-primary);
+}
+
+a{text-decoration: none;}
+
+p{margin:1rem 0;}
+
+h1, h2{
+    text-align: center;
+}
+
+h1, h2, h3{line-height: 2;}
+
+li{
+    line-height: 2;
+}
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 0 30px;
+    border:none;
+}
+
+
+    .logos{
+        display:none;
+    }
+
+.logo{
+    width:300px;
+}
+.menu{
+    display: flex;
+    width:200px;
+    list-style-type: none;
+    }
+    .menu li{
+        padding:0 1px 0 10px;
+    }
+
+    /* header */
+
+    .header{
+        background-color: var(--color-primary);
+        height:70px;
+    }
+
+    /* make header .container */
+    .header .container{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        height:100%;
+        padding:0 20px 0 20px;
+    }
+    header img{
+        height: 45px;
+
+    }
+    .logos{
+        display:none;
+    }
+
+.logo{
+    width:300px;
+}
+.menu{
+    display: flex;
+    width:200px;
+    list-style-type: none;
+    }
+
+    .menu li{
+        padding:0 1px 0 10px;
+    }
+    .menu li a{
+        color: rgb(255, 183, 0);
+    }
+
+    /* showcase */
+    .showcase{
+        background-color: var(--color-secondary);
+        padding:30px;
+        background-image: linear-gradient(to bottom, var(--color-primary),  var(--color-secondary));
+    }
+    #showcase-text{
+color:white;
+text-align: center;
+margin:50px auto;
+max-width: 500px;
+    }
+
+    .showcase h1{
+font-size: 50px;
+margin-bottom: 20px;
+    }
+
+    .showcase p{
+font-size: 24px;
+margin-bottom:20px;
+    }
+
+.showcase-img{
+    text-align: center;
+}
+
+    .showcase-img img{
+border-radius: 10px;
+
+    }
+
+    .showcase-demo{
+color: white;
+text-align: center ;
+    }
+
+    /* Cards */
+.features .container{
+    background-color: none;
+    display:flex;
+    gap:1rem;
+    flex-basis:28%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+    .card{
+        background-color: #fff;
+        padding:20px;
+        box-shadow:0 0 10px var(--color-primary);
+        margin-bottom:20px;
+
+    }
+    /* Page content */
+    .page-content{
+        margin:20px 0;
+    }
+    .page-content h2, .page-content h3{
+        margin:20px 0;
+    }
+    .page-content h2{
+        font-size:40px;
+    }
+    .page-content h3{
+    font-size:25px;
+    }
+    /* Semesters */
+    .semesters{
+        margin:20px 0;
+    }
+    .semesters h2, .semesters h3{
+        margin:20px 0;
+    }
+    .semesters h2{
+        font-size:40px;
+    }
+    .semesters h3{
+    font-size:25px;
+    }
+/* Footer Section */
+    .footer{
+        background-color: var(--color-primary);
+        color:var(--color-secondary);
+        text-align: center;
+        padding:20px;
+        margin-top:60px;
+    }
+    .footer .container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: rgb(255, 183, 0);
+    }
+    .footer a{
+        color: rgb(255, 183, 0);
+    }
+    .footer a:hover{
+        color: rgb(255, 140, 0);
+    }
+    .footer h3{
+margin-bottom: 20px;
+}
+.quote{
+    text-align: left;
+}
+.footerlinks{
+display:none;
+}
+
+@media (min-width:700px){
+
+.features .container{
+    flex-direction: row;
+}
+
+.container h1, h2{
+    text-align: left;
+}
+.header h1, h2{
+    text-align: center;
+}
+
+.footerlinks{
+    display:block;
+}
+
+}
+@media (min-width:960px){
+
+.logos{
+    display:block;
+    margin:auto;
+
+}
+
+.logos-small{
+    display:none;
+}
+
+}
+.container .logo img{
+    width:60px;
+    height:60px;
+    border-radius:50% 50%;
+    border: 3px solid rgb(255, 183, 0);
+}
+</style>
+
+</head>
+<body>
+    <!-- Begin Header -->
+    <header class="header">
+
+<div class="container">
+    <div class="logo"> 
+        <a href="index.html">   <img src="img/logo 2.png" alt="logo"></a>
+    </div>
+    
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </nav>
+</div>
+
+    </header>
+    <!-- End Header -->
+
+    <!-- Begin Showcase -->
+    <section class="showcase">
+
+<div id="showcase-text">
+    <h1>Silvia Rios</h1>
+<h2>Portfolio</h2>
+</div>
+
+<div class="showcase-img">
+    <img src="img/framework-logos.png" alt="framework logos" class="logos">
+    <img src="img/framework-logos-small.png" alt="framework logos" class="logos-small">
+</div>
+
+<p class="showcase-demo">
+    <small>Work Showcase</small>
+</p>
+
+    </section>
+    <!-- End Showcase -->
+
+    <!-- Begin Features -->
+
+<section class="features">
+
+<!-- Begin Container Here -->
+<div class="container">
+    <div class="card">
+        <h3>Career</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, illum.</p>
+    </div>
+    
+    <div class="card">
+        <h3>Design</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, praesentium?</p>
+    </div>
+    
+    <div class="card">
+        <h3>Programming</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, maiores!</p>
+    </div>
+</div>
+
+<!-- End container here -->
+</section>
+<!-- End Features -->
+
+<!-- Start page-content her ** -->
+
+<section class="page-content"> 
+
+<div class="container">
+        <h2>Introducton</h2>
+        <p>Hello! Welcome to my portfolio. I am Silvia Rios and I am a junior at Coalinga highschool. This is my 3rd year of Web Design. I've taken Web Page Design, Intro To CS and JavaScript, and now Web Application Development. Continue browsing through my webpage to learn more about my career, design, and programming life!</p>
+    
+        <h3>Career</h3>
+        <p>Throuhgout my Web Design schooling, I've learned many tools that can help me in the careers I want to pursue. I want to become a marine bioloogst and, thanks to web deisgn, I have a new way to share my research and any information through coding.</p>
+
+        <p>Click <a href="resume.html">here</a> to read about my job qualifications, jobs, and internships I have had.</p>
+
+    <p>    Click <a href="school.html">here</a> to read about my student life as a student at Coalinga Highschool.</p>
+    
+        <h3>Design</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magnam placeat, eos nobis iste dolorum assumenda, rem consectetur officiis explicabo iure? Laborum officia animi et cumque suscipit quisquam sed accusamus.</p>
+    
+        <h3>Programming</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque ipsum neque hic obcaecati mollitia, tenetur at ducimus, aliquid quam incidunt facere voluptatem ullam officiis minus voluptatum sit eligendi, reprehenderit a?</p>
+    </section>
+    <!-- End page-content -->
+    
+    <!-- Start Semesters section -->
+    <section class="semesters">
+    
+    <div class="container">
+        <h2>Key Assigments</h2>
+        
+        <h3>Semester 1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nobis, laboriosam excepturi cumque atque maxime repellat placeat commodi voluptatum inventore.</p>
+        
+        <h3>Semester 2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cum optio, provident soluta doloremque animi deleniti tempore nostrum necessitatibus voluptate.</p>
+        
+    </div>
+</div>
+</section>
+<!-- End Semesters section -->
+
+<!-- Begin footer section -->
+
+    <footer class="footer">
+
+        <div class="container">
+            <div class="quote">
+            <div>
+                <h3>Final Thoughts</h3>
+                <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, quae!</blockquote>
+                <p>- Anonymous</p>
+            </div>
+        </div>
+
+            <div>
+                <div class="footerlinks">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+<!-- End footer section -->
+
+</body>
+</html>
