@@ -21,45 +21,165 @@
 
         /* Browser Reset */
         *, *::before, *::after{
+            box-sizing:border-box;
             margin:0;
             padding:0;
-            box-sizing:border-box;
         }
 
-        /* Easy Pixel Calculations With Rem Units*/
-        body{
-            font-size:1.6rem;
-        }
         /* Fix Browser Bounce on Macs */
         body{
             overflow-x:auto;
             width:100%;
             overscroll-behavior:none;
+            /* Allows for easy pixel calcs in rems */
+            font-size:1.6rem;
         }
         /* General Mobile First CSS */
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            background-color: #f8fafc;
+            color:#333;
+        }
+        /* Link Styles */
+        a{
+            color:red;
+            text-decoration:none;
+        }
+        /* Paragraph styles */
+        p{margin:1rem 0 1rem 0;}
+
+        /* Header styles */
+        h1,h2{
+            text-align:center;
+        }
+        h1,h2,h3{
+            line-height:1.2;
+            font-family:Georgia, 'Times New Roman', Times, serif'
+        }
+        /* List Styles */
+        li{
+            line-height:2;
+        }
+        /* Container Styles */
         .container{
-            background-color: white;
-            min-height:10.0rem;
             max-width:120rem;
             margin:auto;
-            padding:0rem 3rem 0rem 3rem;
+            padding:0 3rem 0 3rem;
         }
+        /* End General Mobile First Styles */
 
+        /* Header Section Styles */
         #pageheader{
-            padding:1rem;
-            min-height:200px;
-            background-color: red;
+            background-color: var(--color-primary);
+            height:7.0rem;
         }
+        /* Special Header Container Styles */
+        #pageheader .container{
+            background-color: aquamarine;
+            border:2px dashed red;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            height:100%;
+            padding:0 2rem 0 2rem;
+        }
+        .logo img{
+            height:6rem;
+        }
+        .logo:hover{
+            animation-name:swim;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
+            animation-direction:alternate;
+            animation-timing-function:linear;
+        }
+        @keyframes swim{
+            0%{transform:rotate(0deg);}
+            100%{transform:rotate(45deg);}
+        }
+        /* Header Menu */
+        #menu{
+            background-color: #f0ad4a;
+            border:2px dashed red;
+            display:flex;
+            justify-content: space-between;
+            width:20rem;
+            list-style-type: none;
+            background-color: none;
+        }
+        #menu li a{
+            color:#fff;
+        }
+        /* End Of Header Section Styles */
+        /* Showcase Section Styles */
         #showcase{
-            padding:1rem;
-            min-height:200px;
-            background-color: orange;
+            border:.2rem solid none;
+            background-color: var(--color-primary);
+            padding:3rem;
+            background-image: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+            background-image: url(Images/pond.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: bottom left;
         }
-        #features{
-            padding:1rem;
-            min-height:200px;
-            background-color: yellow;
+        #showcasetext{
+            border:2rem solid none;
+            color:#fff;
+            text-align: center;
+            margin:auto;
+            margin:5rem auto;
+            max-width: 60rem;
         }
+        #showcase h1{
+            font-size:5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 1rem black;
+        }
+        #showcase blockquote{
+            font-size:2.4rem;
+            margin-bottom:2rem;
+        }
+        #showcaseimage{
+            text-align: center;
+            /* Cheating */
+        }
+        #showcaseimg img{
+            border-radius:1rem;
+            margin:auto; 
+        }
+        #showcaseintro{
+            color:#fff;
+            text-align:center;
+            font-size:3rem;
+        }
+        /* Hide Big Logos/Technologies for Mobile */
+        #logosbig{
+            display:none;
+        }
+        #logossmall{
+            width:30rem;
+        }
+        /* End of Showcase Section Styles */
+        /* Features Section */
+        #features .container{
+            padding-top:2rem;
+            background-color: burlywood;
+            border:2px dashed red;
+            display:flex;
+            gap:1rem;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .card{
+            background-color: #fff;
+            padding:2rem;
+            box-shadow:0rem 0rem 1rem silver;
+            margin-bottom: 2rem;
+            border-radius:2.5rem;
+        }
+        /* End Features Section Styles */
         #pagecontent{
             padding:1rem;
             min-height:200px;
@@ -128,9 +248,19 @@
     -->
 
     <!-- Begin PageHeader -->
-    <header id="pageheader">pageheader
-
-        <div class="container"></div> 
+    <header id="pageheader">
+        <div class="container">
+            <div class="logo">
+                <img src="Images/fishlogosmallanimate.png" alt="Koi Fish Logo">
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div> 
         <!-- end container -->
     </header>
     <!-- End PageHeader -->
@@ -138,15 +268,41 @@
 
 
     <!-- Begin Showcase -->
-    <section id="showcase">showcase</section>
+    <section id="showcase">
+        <div id="showcasetext">
+            <h1>Silvia Rios</h1>
+            <h2>Portfolio</h2>
+            <blockquote>It always seems impossible unitl it is done. - Nelson Mandela</blockquote>
+        </div>
+        <div id="showcaseimg">
+            <img src="Images/technologiesbig.png" alt="Technologies" id="logosbig">
+            <img src="Images/technologiessmall.png" alt="Technologies" id="logossmall">
+        </div>
+        <p id="showcaseintro">This is a showcase of my web design/development work.</p>
+    </section>
     <!-- End Showcase -->
 
 
 
     <!-- Begin Features -->
-    <section id="features">features
-
-        <div class="container"></div>
+    <section id="features">
+        <div class="container">
+            <!-- Cards -->
+            <div class="card">
+                <h3>Career</h3>
+                <p>Review my career documents including my resume, cover letter, and job applications.</p>
+            </div>
+            <!-- card 2 -->
+            <div class="card">
+                <h3>Design</h3>
+                <p>Review my website designs and iamge creations.</p>
+            </div>
+            <!-- card 3 -->
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Review my JavaScript applications.</p>
+            </div>
+        </div>
         <!-- End container -->
     </section>
     <!-- End Features -->
