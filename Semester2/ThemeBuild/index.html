@@ -185,11 +185,47 @@
             min-height:200px;
             background-color: green;
         }
-        #semesters{
-            padding:1rem;
-            min-height:200px;
-            background-color: rgb(146, 202, 255);
-        }
+/* Semester Section */
+#semesters{
+    padding:2rem 0 2rem 0;
+}
+#semesters h2, #semesters h3{
+    padding:2rem 0 2rem 0;
+}
+#semesters h2{
+    font-size:4rem;
+}
+#semesters h3{
+    font-size:2.5rem;
+}
+.assignments a{
+    color:#2d6858;
+}
+/* End Semester Section */
+        /* Semesters Thumbnail Section */
+.thumbnail{
+    background-color: burlywood;
+    border:2px dashed red;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap:wrap;
+    align-content:center;
+}
+.thumb{
+    width:150px;
+    height:150px;
+}
+.thumb:hover{
+    animation-name:tilt;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+}
+@keyframes tilt{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(-15deg);}
+}
+    /* End Semesters Thumbnail Section Styles */
         #pagefooter{
             padding:1rem;
             min-height:200px;
@@ -320,9 +356,35 @@
 
 
     <!-- Begin Semesters -->
-    <section id="semesters">semesters
-
-        <div class="container"></div>
+    <section id="semesters">
+        <div class="container">
+            <h2>Key Assignments</h2>
+            
+            <section id="workthumbnails">
+                <div class="thumbnail">
+                    <img src="Images/thumbnail.gif" alt="VS Code" class="thumb">
+                    <img src="Images/thumbnail.gif" alt="Git" class="thumb">
+                    <img src="Images/thumbnail.gif" alt="Mark Down" class="thumb">
+                    <img src="Images/thumbnail.gif" alt="JavaScript" class="thumb">
+                    <img src="Images/thumbnail.gif" alt="Photoshop" class="thumb">
+                    <img src="Images/thumbnail.gif" alt="Github" class="thumb">
+                </div>
+            </section>
+            <h3>Semester 1</h3>
+            <ul class="assignments">
+                <li><a href="#" target="new">A001 - Description</a></li>
+                <li><a href="#" target="new">A002 - Description</a></li>
+                <li><a href="#" target="new">A003 - Description</a></li>
+                <li><a href="#" target="new">A004 - Description</a></li>
+            </ul>
+            <h3>Semester 2</h3>
+            <ul class="assignments">
+                <li><a href="#" target="new">A001 - Description</a></li>
+                <li><a href="#" target="new">A002 - Description</a></li>
+                <li><a href="#" target="new">A003 - Description</a></li>
+                <li><a href="#" target="new">A004 - Description</a></li>
+            </ul>
+        </div>
         <!-- End container -->
     </section>
     <!-- End Semesters -->
