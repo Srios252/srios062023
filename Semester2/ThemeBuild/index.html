@@ -1,450 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Build For Astro</title>
-    <style>
-        :root{
-            --color-primary:red;
-            --color-secondary:blue;
-        }
-        html{
-            font-size:62.5%;
-            /* Allows You To Use Rems instead of pixels for sizing */
-            /* .5rem = 5px */
-            /* 1rem = 10px*/
-            /* 1.6rem = 16px */
-            /* 2rem = 20px */
-            /* 6rem = 60px */
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Theme Build For Astro</title>
+ <style>
+ :root{
+ --color-primary:red;
+ --color-secondary:blue;
+ }
+ html{
+ font-size:62.5%;
+ /* Allows You To Use Rems instead of pixels for sizing */
+ /* .5rem = 5px */
+ /* 1rem = 10px*/
+ /* 1.6rem = 16px */
+ /* 2rem = 20px */
+ /* 6rem = 60px */
+ }
 
-        /* Browser Reset */
-        *, *::before, *::after{
-            box-sizing:border-box;
-            margin:0;
-            padding:0;
-        }
+ /* Browser Reset */
+ *, *::before, *::after{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ }
 
-        /* Fix Browser Bounce on Macs */
-        body{
-            overflow-x:auto;
-            width:100%;
-            overscroll-behavior:none;
-            /* Allows for easy pixel calcs in rems */
-            font-size:1.6rem;
-        }
-        /* General Mobile First CSS */
-        body{
-            font-family:Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            background-color: #f8fafc;
-            color:#333;
-        }
-        /* Link Styles */
-        a{
-            color:red;
-            text-decoration:none;
-        }
-        /* Paragraph styles */
-        p{margin:1rem 0 1rem 0;}
+ /* Fix Browser Bounce on Macs */
+ body{
+ overflow-x:auto;
+ width:100%;
+ overscroll-behavior:none;
+ /* Allows for easy pixel calcs in rems */
+ font-size:1.6rem;
+ }
+ /* General Mobile First CSS */
+ body{
+ font-family:Arial, Helvetica, sans-serif;
+ line-height: 1.7;
+ background-color:#022359;
+ color:lightblue;
+ }
+ /* Link Styles */
+ a{
+ color:white;
+ text-decoration:none;
+ }
+ /* Paragraph styles */
+ p{margin:1rem 0 1rem 0;}
 
-        /* Header styles */
-        h1,h2{
-            text-align:center;
-        }
-        h1,h2,h3{
-            line-height:1.2;
-            font-family:Georgia, 'Times New Roman', Times, serif'
-        }
-        /* List Styles */
-        li{
-            line-height:2;
-        }
-        /* Container Styles */
-        .container{
-            max-width:120rem;
-            margin:auto;
-            padding:0 3rem 0 3rem;
-        }
-        /* End General Mobile First Styles */
+ /* Header styles */
+ h1,h2{
+ text-align:center;
+ }
+ h1,h2,h3{
+ line-height:1.2;
+ font-family:Georgia, 'Times New Roman', Times, serif'
+ }
+ /* List Styles */
+ li{
+ line-height:2;
+ }
+ /* Container Styles */
+ .container{
+ max-width:120rem;
+ margin:auto;
+ padding:0 3rem 0 3rem;
+ }
+ /* End General Mobile First Styles */
 
-        /* Header Section Styles */
-        #pageheader{
-            background-color: var(--color-primary);
-            height:7.0rem;
-        }
-        /* Special Header Container Styles */
-        #pageheader .container{
-            background-color: aquamarine;
-            border:2px dashed red;
-            display: flex;
-            justify-content: space-between;
-            align-items:center;
-            height:100%;
-            padding:0 2rem 0 2rem;
-        }
-        .logo img{
-            height:6rem;
-        }
-        .logo:hover{
-            animation-name:swim;
-            animation-duration:5s;
-            animation-iteration-count: infinite;
-            animation-direction:alternate;
-            animation-timing-function:linear;
-        }
-        @keyframes swim{
-            0%{transform:rotate(0deg);}
-            100%{transform:rotate(45deg);}
-        }
-        /* Header Menu */
-        #menu{
-            background-color: #f0ad4a;
-            border:2px dashed red;
-            display:flex;
-            justify-content: space-between;
-            width:20rem;
-            list-style-type: none;
-            background-color: none;
-        }
-        #menu li a{
-            color:#fff;
-        }
-        /* End Of Header Section Styles */
-        /* Showcase Section Styles */
-        #showcase{
-            border:.2rem solid none;
-            background-color: var(--color-primary);
-            padding:3rem;
-            background-image: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
-            background-image: url(Images/pond.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: bottom left;
-        }
-        #showcasetext{
-            border:2rem solid none;
-            color:#fff;
-            text-align: center;
-            margin:auto;
-            margin:5rem auto;
-            max-width: 60rem;
-        }
-        #showcase h1{
-            font-size:5rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 1rem black;
-        }
-        #showcase blockquote{
-            font-size:2.4rem;
-            margin-bottom:2rem;
-        }
-        #showcaseimage{
-            text-align: center;
-            /* Cheating */
-        }
-        #showcaseimg img{
-            border-radius:1rem;
-            margin:auto; 
-        }
-        #showcaseintro{
-            color:#fff;
-            text-align:center;
-            font-size:3rem;
-        }
-        /* Hide Big Logos/Technologies for Mobile */
-        #logosbig{
-            display:none;
-        }
-        #logossmall{
-            width:30rem;
-        }
-        /* End of Showcase Section Styles */
-        /* Features Section */
-        #features .container{
-            padding-top:2rem;
-            background-color: burlywood;
-            border:2px dashed red;
-            display:flex;
-            gap:1rem;
-            justify-content: space-between;
-            flex-direction: column;
-        }
-        .card{
-            background-color: #fff;
-            padding:2rem;
-            box-shadow:0rem 0rem 1rem silver;
-            margin-bottom: 2rem;
-            border-radius:2.5rem;
-        }
-        /* End Features Section Styles */
-        #pagecontent{
-            padding:1rem;
-            min-height:200px;
-            background-color: green;
-        }
+ /* Header Section Styles */
+ #pageheader{
+ background-color:rgb(6, 15, 43);
+ height:7.0rem;
+ }
+ /* Special Header Container Styles */
+ #pageheader .container{
+ background-color: rgb(6, 15, 43);
+ border:2px dashed none;
+ display: flex;
+ justify-content: space-between;
+ align-items:center;
+ height:100%;
+ padding:0 2rem 0 2rem;
+ }
+ .logo img{
+ height:6rem;
+ }
+ .logo:hover{
+ animation-name:swim;
+ animation-duration:5s;
+ animation-iteration-count: infinite;
+ animation-direction:alternate;
+ animation-timing-function:linear;
+ }
+ @keyframes swim{
+ 0%{transform:rotate(0deg);}
+ 100%{transform:rotate(45deg);}
+ }
+ /* Header Menu */
+ #menu{
+ background-color: none;
+ border:none;
+ display:flex;
+ justify-content: space-between;
+ width:20rem;
+ list-style-type: none;
+ background-color: none;
+ }
+ #menu li a{
+ color:#fff;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ }
+ #menu li a:hover{
+ color:lightblue;
+ }
+ /* End Of Header Section Styles */
+ /* Showcase Section Styles */
+ #showcase{
+ border:.2rem solid none;
+ background-color: none;
+ padding:3rem;
+ background-image: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+ background-image: url(Images/126fb56bb5553327143e125637696265.jpeg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ background-position: bottom left;
+ }
+ #showcasetext{
+ border:2rem solid none;
+ color:#fff;
+ text-align: center;
+ margin:auto;
+ margin:5rem auto;
+ max-width: 60rem;
+ }
+ #showcase h1{
+ font-size:5rem;
+ margin-bottom: 2rem;
+ text-shadow: 0 0 1rem black;
+ }
+ #showcase blockquote{
+ font-size:2rem;
+ margin-bottom:2rem;
+ }
+ #showcaseimage{
+ text-align: center;
+
+ /* Cheating */
+ }
+ #showcaseimg img{
+ border-radius:1rem;
+ margin:auto; 
+ align-items:center;
+ }
+ #showcaseintro{
+ color:#fff;
+ text-align:center;
+ font-size:3rem;
+ }
+ /* Hide Big Logos/Technologies for Mobile */
+ #logosbig{
+ display:none;
+ }
+ #logossmall{
+ width:30rem;
+ }
+ /* End of Showcase Section Styles */
+ /* Features Section */
+ #features .container{
+ padding-top:2rem;
+ background-color: none;
+ border:none;
+ display:flex;
+ gap:1rem;
+ justify-content: space-between;
+ flex-direction: column;
+ }
+ .card{
+ background-color: #fff;
+ padding:2rem;
+ height:150px;
+ box-shadow:0rem 0rem 1rem silver;
+ margin-bottom: 2rem;
+ border-radius:2.5rem;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+ .card a{
+ color:lightblue;
+ }
+ .card a:hover{
+ color:white;
+ }
+ .card h3{
+ text-align:center;
+ font-size:3rem;
+ }
+ #card1{
+ background-image: url(Images/card1.jpeg);
+ background-size:cover;
+ }
+ #card2{
+ background-image:url(Images/card2.jpeg);
+ background-size:cover;
+ }
+ #card3{
+ background-image: url(Images/card3.jpeg);
+ background-size:cover;
+ }
+ /* End Features Section Styles */
+ #pagecontent{
+ padding:1rem;
+ min-height:200px;
+ background-color: #010511;
+ } 
+ #pagecontent img{
+ width:550px;
+ height:300px;
+ position:relative;
+ left:300px;
+ }
 /* Semester Section */
 #semesters{
-    padding:2rem 0 2rem 0;
+ padding:2rem 0 2rem 0;
 }
 #semesters h2, #semesters h3{
-    padding:2rem 0 2rem 0;
+ padding:2rem 0 2rem 0;
 }
 #semesters h2{
-    font-size:4rem;
+ font-size:4rem;
 }
 #semesters h3{
-    font-size:2.5rem;
+ font-size:2.5rem;
 }
 .assignments a{
-    color:#2d6858;
+ color:rgb(183, 183, 183);
+}
+.assignments a:hover{
+ color:aqua;
 }
 /* End Semester Section */
-        /* Semesters Thumbnail Section */
+ /* Semesters Thumbnail Section */
 .thumbnail{
-    background-color: burlywood;
-    border:2px dashed red;
-    display:flex;
-    justify-content: space-evenly;
-    align-items:center;
-    flex-wrap:wrap;
-    align-content:center;
+ background-color: #325998;
+ border:2px solid white;
+ display:flex;
+ justify-content: space-evenly;
+ align-items:center;
+ flex-wrap:wrap;
+ align-content:center;
 }
 .thumb{
-    width:150px;
-    height:150px;
+ width:150px;
+ height:150px;
 }
 .thumb:hover{
-    animation-name:tilt;
-    animation-duration:1s;
-    animation-fill-mode:forwards;
+ animation-name:tilt;
+ animation-duration:1s;
+ animation-fill-mode:forwards;
 }
 @keyframes tilt{
-    0%{transform:rotate(0deg);}
-    100%{transform:rotate(-15deg);}
+ 0%{transform:rotate(0deg);}
+ 100%{transform:rotate(-15deg);}
 }
-    /* End Semesters Thumbnail Section Styles */
-        /* Footer Section */
+ /* End Semesters Thumbnail Section Styles */
+ /* Footer Section */
 #pagefooter{
-background-color: var(--color-primary);
+background-color: rgb(6, 15, 43);
 color:#fff;
 text-align:center;
 padding:2rem;
 padding-top:6rem;
 }
 #pagefooter .container{
-    background-color: chocolate;
-    border:2px dashed red;
-    display:flex;
-    justify-content: space-evenly;
-    align-items:center;
+ background-color: none;
+ border:none;
+ display:flex;
+ justify-content: space-evenly;
+ align-items:center;
 }
 #pagefooter a{
-    color:#fff;
+ color:#fff;
 }
 #pagefooter a:hover{
-    color:#b7c1bf;
+ color:#b7c1bf;
 }
 #pagefooter h3{
-    padding-bottom:3rem;
+ padding-bottom:3rem;
 }
 #pagefooter #quote{
-    text-align:left;
+ text-align:left;
 }
 #pagefooterlinks{
-    display:none;
+ display:none;
 }
 /* End Footer Section Styles */
 
 /* Media Queries */
 @media only screen and (min-width:320px){
 #features{
-    background-color: magenta;
+ background-color:rgb(6, 15, 43);
 }
 }
 @media only screen and (min-width:480px){
-    #features{
-        background-color: yellow;
-    }
+ #features{
+ background-color:rgb(6, 15, 43);
+ }
 }
 @media only screen and (min-width:768px){
-    #features{
-        background-color: lime;}
-        .card{
-            flex-basis:30%;
-        }
-        #features .container{
-            flex-direction: row;
-        }
-        h1, h2{
-            text-align: left;
-        }
-    }
-    @media only screen and (min-width:1024px){
-        #features{
-            background-color: coral;}
-            #logosbig{
-                display:block;
-                margin:auto:
-            }
-            #logossmall{
-                display:none;
-            }
-        }
-        @media only screen and (min-width:1200px){
-            #features{
-                background-color: steelblue;
-            }
-            #pagefooterlink{
-                display:block;
-            }
-        }
+ #features{
+ background-color:rgb(6, 15, 43);}
+ .card{
+ flex-basis:30%;
+ }
+ #features .container{
+ flex-direction: row;
+ }
+ h1, h2{
+ text-align: left;
+ }
+ }
+ @media only screen and (min-width:1024px){
+ #features{
+ background-color:rgb(6, 15, 43);}
+ #logosbig{
+ display:block;
+ margin:auto:
+ }
+ #logossmall{
+ display:none;
+ }
+ }
+ @media only screen and (min-width:1200px){
+ #features{
+ background-color:rgb(6, 15, 43);
+ }
+ #pagefooterlink{
+ display:block;
+ }
+ }
 
-        /*  */
-    </style>
+ /* */
+blockquote::before{
+    font-size: 64px;
+            background-color: none;
+            content:"“";
+}
+blockquote::after{
+    font-size: 64px;
+            background-color: none;
+            content:"“";
+}
+ </style>
 </head>
 <body>
-    <!-- 
-    pageheader
-    showcase
-    features
-    pagecontent
-    semesters
-    pagefooter
-    -->
+ <!-- 
+ pageheader
+ showcase
+ features
+ pagecontent
+ semesters
+ pagefooter
+ -->
 
-    <!-- Begin PageHeader -->
-    <header id="pageheader">
-        <div class="container">
-            <div class="logo">
-                <img src="Images/fishlogosmallanimate.png" alt="Koi Fish Logo">
-            </div>
-            <nav>
-                <ul id="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </nav>
-        </div> 
-        <!-- end container -->
-    </header>
-    <!-- End PageHeader -->
-
-
-
-    <!-- Begin Showcase -->
-    <section id="showcase">
-        <div id="showcasetext">
-            <h1>Silvia Rios</h1>
-            <h2>Portfolio</h2>
-            <blockquote>It always seems impossible unitl it is done. - Nelson Mandela</blockquote>
-        </div>
-        <div id="showcaseimg">
-            <img src="Images/technologiesbig.png" alt="Technologies" id="logosbig">
-            <img src="Images/technologiessmall.png" alt="Technologies" id="logossmall">
-        </div>
-        <p id="showcaseintro">This is a showcase of my web design/development work.</p>
-    </section>
-    <!-- End Showcase -->
+ <!-- Begin PageHeader -->
+ <header id="pageheader">
+ <div class="container">
+ <div class="logo">
+ <img src="Images/jellylogo.png" alt="Jellyfish logo">
+ </div>
+ <nav>
+ <ul id="menu">
+ <li><a href="index.html">Home</a></li>
+ <li><a href="about.html">About</a></li>
+ <li><a href="blog.html">Blog</a></li>
+ </ul>
+ </nav>
+ </div> 
+ <!-- end container -->
+ </header>
+ <!-- End PageHeader -->
 
 
 
-    <!-- Begin Features -->
-    <section id="features">
-        <div class="container">
-            <!-- Cards -->
-            <div class="card">
-                <h3>Career</h3>
-                <p>Review my career documents including my resume, cover letter, and job applications.</p>
-            </div>
-            <!-- card 2 -->
-            <div class="card">
-                <h3>Design</h3>
-                <p>Review my website designs and iamge creations.</p>
-            </div>
-            <!-- card 3 -->
-            <div class="card">
-                <h3>Programming</h3>
-                <p>Review my JavaScript applications.</p>
-            </div>
-        </div>
-        <!-- End container -->
-    </section>
-    <!-- End Features -->
+ <!-- Begin Showcase -->
+ <section id="showcase">
+ <div id="showcasetext">
+ <h1>Silvia Rios</h1>
+ <h2>Portfolio</h2>
+ <blockquote>Like adolescents, jellies are dangerous and fragile — easy to wound, but also capable of inflicting harm. They drift past each other feeling alone and never fully connecting. And like adolescents, they have no idea how beautiful they are.</blockquote>
+ <p>- Anonymous</p>
+ </div>
+ <div id="showcaseimg">
+ <img src="Images/technologiesbig.png" alt="Technologies" id="logosbig">
+ <img src="Images/technologiessmall.png" alt="Technologies" id="logossmall">
+ </div>
+ <p id="showcaseintro">This is a showcase of my web design/development work.</p>
+ </section>
+ <!-- End Showcase -->
 
 
 
-    <!-- Begin Pagecontent -->
-    <main id="pagecontent">pagecontent
+ <!-- Begin Features -->
+ <section id="features">
+ <div class="container">
+ <!-- Cards -->
+ <div class="card" id="card1">
+ <a href=""><h3>Career</h3></a>
+ 
+ </div>
+ <!-- card 2 -->
+ <div class="card" id="card2">
+ <a href=""><h3>Design</h3></a>
+ 
+ </div>
+ <!-- card 3 -->
+ <div class="card" id="card3">
+ <a href=""><h3>Programming</h3></a>
+ 
+ </div>
+ </div>
+ <!-- End container -->
+ </section>
+ <!-- End Features -->
 
-        <div class="container"></div>
-        <!-- End container -->
-    </main>
-    <!-- End pagecontent -->
+
+
+ <!-- Begin Pagecontent -->
+ <main id="pagecontent">
+
+ <div class="container">
+ <h1>Introduction</h1>
+ <p>
+ Welcome to my portfolio. Continue scrolling for a brief overview of what we have learned in Web Application Development this year.
+ </p>
+ <img src="Images/pagecontent.jpeg" alt="Jellyfish swimming on side">
+ </div>
+ <!-- End container -->
+ </main>
+ <!-- End pagecontent -->
 
 
 
-    <!-- Begin Semesters -->
-    <section id="semesters">
-        <div class="container">
-            <h2>Key Assignments</h2>
-            
-            <section id="workthumbnails">
-                <div class="thumbnail">
-                    <img src="Images/thumbnail.gif" alt="VS Code" class="thumb">
-                    <img src="Images/thumbnail.gif" alt="Git" class="thumb">
-                    <img src="Images/thumbnail.gif" alt="Mark Down" class="thumb">
-                    <img src="Images/thumbnail.gif" alt="JavaScript" class="thumb">
-                    <img src="Images/thumbnail.gif" alt="Photoshop" class="thumb">
-                    <img src="Images/thumbnail.gif" alt="Github" class="thumb">
-                </div>
-            </section>
-            <h3>Semester 1</h3>
-            <ul class="assignments">
-                <li><a href="#" target="new">A001 - Description</a></li>
-                <li><a href="#" target="new">A002 - Description</a></li>
-                <li><a href="#" target="new">A003 - Description</a></li>
-                <li><a href="#" target="new">A004 - Description</a></li>
-            </ul>
-            <h3>Semester 2</h3>
-            <ul class="assignments">
-                <li><a href="#" target="new">A001 - Description</a></li>
-                <li><a href="#" target="new">A002 - Description</a></li>
-                <li><a href="#" target="new">A003 - Description</a></li>
-                <li><a href="#" target="new">A004 - Description</a></li>
-            </ul>
-        </div>
-        <!-- End container -->
-    </section>
-    <!-- End Semesters -->
+ <!-- Begin Semesters -->
+ <section id="semesters">
+ <div class="container">
+ <h2>Key Assignments</h2>
+ 
+ <section id="workthumbnails">
+ <div class="thumbnail">
+ <img src="Images/thumbnail.gif" alt="VS Code" class="thumb">
+ <img src="Images/thumbnail.gif" alt="Git" class="thumb">
+ <img src="Images/thumbnail.gif" alt="Mark Down" class="thumb">
+ <img src="Images/thumbnail.gif" alt="JavaScript" class="thumb">
+ <img src="Images/thumbnail.gif" alt="Photoshop" class="thumb">
+ <img src="Images/thumbnail.gif" alt="Github" class="thumb">
+ </div>
+ </section>
+ <h3>Semester 1</h3>
+ <ul class="assignments">
+ <li><a href="AFB001/afb001.html" target="new">A001 - Flexbox1</a></li>
+ <li><a href="AFB002/afb002.html" target="new">A002 - Flexbox2</a></li>
+ <li><a href="AFB003/afb003.html" target="new">A003 - Flexbox3</a></li>
+ <li><a href="ArraysMap/arraysforeach.html" target="new">A004 - ArraysMap ForEach</a></li>
+ </ul>
+ <h3>Semester 2</h3>
+ <ul class="assignments">
+ <li><a href="CanvasDrawing1/canvasdrawing1.html" target="new">A001 - Canvas Drawing 1</a></li>
+ <li><a href="CanvasDrawing2/canvas2.html" target="new">A002 - Canvas Drawing 2</a></li>
+ <li><a href="Markdown Notes/classnotes copy.md" target="new">A003 - Markdown Notes</a></li>
+ <li><a href="Objects/objects.html" target="new">A004 - Objects</a></li>
+ </ul>
+ </div>
+ <!-- End container -->
+ </section>
+ <!-- End Semesters -->
 
 
 
 <!-- Begin Pagefooter -->
 <footer id="pagefooter">
-    <div class="container">
-        <div id="quote">
-            <h3>Final Thoughts</h3>
-            <blockquote>
-                When I was young, I thought that money was the most important thing in life; now that I am old, I know that it is. - Oscar Wilde
-            </blockquote>
-        </div>
-        <!-- End quote -->
+ <div class="container">
+ <div id="quote">
+ <h3>Final Thoughts</h3>
+ <blockquote>
+ Just Keep Swimming!
+ </blockquote>
+ </div>
+ <!-- End quote -->
 
-        <div id="pagefooterlinks">
-            <h3>Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">About</a></li>
-                <li><a href="index.html">Blog</a></li>
-            </ul>
-        </div>
-        <!-- End footer links -->
-    </div>
-    <!-- End container -->
+ <div id="pagefooterlinks">
+ <h3>Links</h3>
+ <ul>
+ <li><a href="index.html">Home</a></li>
+ <li><a href="index.html">About</a></li>
+ <li><a href="index.html">Blog</a></li>
+ </ul>
+ </div>
+ <!-- End footer links -->
+ </div>
+ <!-- End container -->
 </footer>
 <!-- End Pagefooter -->
 </body>
