@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Functions</title>
+    <style>
+        pre code{
+            display:block;
+            background-color: silver;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Arrow Functions</h1>
+    <pre>
+        <code>
+            //Arrow Functions Syntax
+            const functionName =()=>{}
+        </code>
+    </pre>
+    <script>
+        adding(3, 7, 5); // Call Function
+
+        //Arrow Functions
+        function adding(a, b, c){
+            window.alert(a + b + c);
+        }
+        //Arrow Function Conversion
+        const addingA = (a, b, c) => {
+            window.alert(a + b + c);
+        };
+
+        addingA(1, 2, 3);
+
+        // Arrow Function multiply 3 numbers
+        const multiply = (a, b, c)=>{
+            window.alert(a*b*c);
+        };
+
+        multiply(2, 2, 3);
+
+        //Arow Function divide 2 numbers
+
+        const divide = (a,b)=>{
+            window.alert(a/b);
+
+        }
+        divide(4,2);
+
+        //Regular Functions
+        
+        //MultiplyR
+        function multiplyR(a, b, c){
+            window.alert(a*b*c);
+        }
+        multiplyR(6,2, 2);
+
+        //DivideR
+        function divideR(a, b){
+            window.alert(a/b);
+        }
+        divideR(6,2);
+
+        //Shorthand Arrow Functions
+        const addNumbers = a=>window.alert(a + 5); //one line command
+        addNumbers(5); //One argument
+
+
+    </script>
+</body>
+</html>
